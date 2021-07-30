@@ -1,0 +1,2 @@
+source("R/dice-class.R")
+source("R/utils.R")

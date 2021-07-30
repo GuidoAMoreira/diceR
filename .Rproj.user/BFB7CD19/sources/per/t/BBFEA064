@@ -1,0 +1,28 @@
+{
+    "id": "BBFEA064",
+    "path": "~/Dropbox/Work/packages/diceR/R/dice-class.R",
+    "project_path": "R/dice-class.R",
+    "type": "r_source",
+    "hash": "2085864252",
+    "contents": "",
+    "dirty": false,
+    "created": 1617106406440.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "203,0",
+        "scrollLine": "0",
+        "docOutlineVisible": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1624961789,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1624961789122,
+    "read_only": false,
+    "read_only_alternatives": []
+}

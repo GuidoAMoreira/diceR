@@ -1,0 +1,13 @@
+#### Class basics ####
+methods::setClass("dice_complex", contains = "dice",
+                  representation = methods::representation(
+                    complexity = "character",
+                    parameters = "numeric"
+                  ))
+
+dropMin <- function(d, n = 1){
+  s <- function(name) methods::slot(d, name)
+  stopifnot(is(d, "dice"), n < sum(s("dice_numbers")))
+  
+  
+} 

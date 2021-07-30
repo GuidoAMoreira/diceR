@@ -1,0 +1,21 @@
+source("R/dice-class.R")
+source("R/utils.R")
+
+2*dice(8) < 12
+plot(2*dice(8))
+
+dmg <- 2%d%8
+dmg$description
+dmg$distribution
+dmg$roll(5)
+
+dmg > 2%d%6+2
+dmg2 <- 2%d%6+2
+
+plot(dmg2)
+cat(dmg2$description)
+
+(3%d%6 - 3 + 4) > dmg
+
+
+3*dice(4) - 2*dice(6)
