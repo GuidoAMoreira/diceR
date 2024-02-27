@@ -29,16 +29,12 @@ methods::setMethod("initialize", "dice", function(.Object, dn, ds, b){
   methods::slot(.Object, "values") = v
 
   # probabilities slot
-  possibilities <- rowSums(expand.grid(
-    do.call(c,lapply(1:length(dn),function(i){
-      d <- 1:ds[i]
-      l <- list()
-      for (j in 1:dn[i]) l <- c(l, list(d))
-      l
-    }))
-  ))
-  probPerRow <- exp(- sum(dn * log(ds)))
-  probs <- probPerRow * as.numeric(table(possibilities))
+  probs <- NULL
+  for (i in seq(length(dn))) {
+    for (j in seq(dn[i])) {
+      probs <- addDiceProb(probs, rep(1 / ds[i], ds[i]))
+    }
+  }
   methods::slot(.Object, "probabilities") <- probs
 
   .Object

@@ -1,3 +1,4 @@
+#' @importFrom methods slot
 describeDice <- function(d){
   stopifnot(is(d, "dice"))
 
@@ -12,4 +13,10 @@ describeDice <- function(d){
     paste(partial, "-", abs(s("bonus")))
   else
     partial
+}
+
+#' @importFrom stats convolve
+addDiceProb <- function(dist1, dist2) {
+  if (is.null(dist1)) return(dist2) else if(is.null(dist2)) return(dist1)
+  stats::convolve(dist1, rev(dist2), type = "open")
 }
