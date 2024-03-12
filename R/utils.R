@@ -1,4 +1,5 @@
-#' @importFrom methods slot
+#' @import methods
+
 describeDice <- function(d){
   stopifnot(is(d, "dice"))
 
@@ -19,4 +20,13 @@ describeDice <- function(d){
 addDiceProb <- function(dist1, dist2) {
   if (is.null(dist1)) return(dist2) else if(is.null(dist2)) return(dist1)
   stats::convolve(dist1, rev(dist2), type = "open")
+}
+
+calcKeepLargest <- function(dice, x) {
+  s <- function(name) methods::slot(dice, name)
+
+  if (x > sum(s("dice_numbers"))) stop("Roll does not have enough dice to keep.")
+  orderDice <- sort.int(s("dice_sides"), decreasing = TRUE, index.return = TRUE)
+
+
 }
